@@ -1,0 +1,16 @@
+.navbar{
+    margin: 0px;
+}
+
+.body{
+    display: grid;
+    grid-template-columns: 0.2fr 3fr;
+}
+
+.sidebar{
+    grid-column: 1;
+}
+
+.content{
+    grid-column: 2;
+}
