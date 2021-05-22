@@ -1,0 +1,80 @@
+*{
+    font-family: Helvetica;
+}
+
+h2{
+    color: #f59907;
+    font-size: 36px;
+}
+
+h2:hover{
+    border-bottom: #f59907 2px groove;
+}
+
+p{
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    font-family:  -apple-system,BlinkMacSystemFont,monospace;
+}
+
+.content{
+    position: absolute;
+    bottom: 30%;
+}
+
+
+.pic{
+    width: 100%;
+    height: auto;
+    opacity: 50%;
+}
+
+.pic-container{
+    position: relative;
+    background: #d9f7ff;
+}
+
+.pic-container:hover{
+    background: none;
+    transition-delay: 0.25s;
+    -webkit-transition-delay: 0.25s;
+    .pic-frame{
+        top: 16px;
+        left: 32px;
+        transition-delay: 0.25s;
+        -webkit-transition-delay: 0.25s;
+    }
+    .pic{
+        background: white;
+        opacity: 100%;
+        transition-delay: 0.55s;
+        -webkit-transition-delay: 0.25s;
+    }
+}
+
+.pic-frame{
+    border: groove black 2px;
+    width: 344px;
+    height: 394px;
+    position: absolute;
+    top: 32px;
+    left: 64px;
+    background: white;
+    z-index: -1;
+}
+
+.arrow{
+    color: #80e5ff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.skill-text{
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    font-family:  -apple-system,BlinkMacSystemFont,monospace;
+    padding-right:5em;
+}
+
