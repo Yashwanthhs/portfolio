@@ -4,11 +4,13 @@
 
 h2{
     color: #f59907;
-    font-size: 36px;
+    font-size: 48px;
 }
 
 h2:hover{
-    border-bottom: #f59907 2px groove;
+    border-bottom: #f59907 2px solid;
+    padding-bottom: 8px;
+    width: 94%;
 }
 
 p{
@@ -40,8 +42,8 @@ p{
     transition-delay: 0.25s;
     -webkit-transition-delay: 0.25s;
     .pic-frame{
-        top: 16px;
-        left: 32px;
+        top: 32px;
+        left: 48px;
         transition-delay: 0.25s;
         -webkit-transition-delay: 0.25s;
     }
@@ -58,8 +60,8 @@ p{
     width: 344px;
     height: 394px;
     position: absolute;
-    top: 32px;
-    left: 64px;
+    top: 48px;
+    left: 96px;
     background: white;
     z-index: -1;
 }
