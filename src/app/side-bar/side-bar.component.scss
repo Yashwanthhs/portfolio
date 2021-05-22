@@ -1,3 +1,7 @@
+.mail-container{
+    padding-left: 16px;
+}
+
 .mail{
     writing-mode: vertical-lr;
     position: absolute;
@@ -6,4 +10,21 @@
     letter-spacing: -0.02em;
     line-height: 1.5;
     font-family:  -apple-system,BlinkMacSystemFont,monospace;
+    padding-bottom: 12px;
+}
+
+.vertical-top {
+    border-left: 4px solid #80e5ff;
+    height: 72px;
+    position:absolute;
+    bottom: 24%;
+    left: 1.4%;
+}
+
+.vertical-bottom {
+    border-left: 4px solid #80e5ff;
+    height: 8px;
+    position:absolute;
+    bottom: 0%;
+    left: 1.4%;
 }

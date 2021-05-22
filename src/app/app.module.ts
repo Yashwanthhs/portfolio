@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AboutComponent } from './about/about.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { EducationComponent } from './education/education.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -15,7 +19,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     AppComponent,
     HomeComponent,
     SideBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    AboutComponent,
+    ExperienceComponent,
+    EducationComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

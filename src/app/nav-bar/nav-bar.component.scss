@@ -8,6 +8,12 @@
     padding: 4px;
 }
 
+hr{
+    margin: 0px;
+    margin-top: 4px;
+    border-top: 1px solid #d5f7fd;
+}
+
 .route{
     margin-left: 8px;
     margin-right: 8px;
@@ -25,4 +31,8 @@
 .resume-btn{
     margin-left: 8px;
     margin-right: 8px;
+}
+
+a{
+    color: #2c2c2c !important;
 }
