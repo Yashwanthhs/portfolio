@@ -6,6 +6,16 @@
     line-height: 1.5;
     font-family:  -apple-system,BlinkMacSystemFont,monospace;
     padding: 4px;
+    border-bottom: aliceblue 0.5px groove;
+    box-shadow: aliceblue 2px ;
+}
+
+.home{
+    float: left;
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 16px;
+    padding-bottom: 32px;
 }
 
 hr{

@@ -1,1 +1,31 @@
-<p>contact works!</p>
+<div class="row contact-content">
+    <div class="col-lg-2 col-md-12 col-xs-12">
+        <h2 style="height: 42px;">Contact</h2>
+    </div>
+    <div class="col-lg-4 col-md-12 col-xs-12 content">
+        <div>
+            <p>
+                For any inquiries and collaborations please contact me. <br>
+                I am looking forward to hearing from you, <br> 
+                I'll try my best to get back to you!
+            </p>
+        </div>
+        <div class="fields" [formGroup]="contactForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" required>
+            </mat-form-field> <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" required>
+            </mat-form-field> <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput formControlName="message"></textarea>
+            </mat-form-field>
+            <div class="action">
+                <button mat-stroked-button class="btn" (click)="sendMail(contactForm)" [disabled]="contactForm.invalid">Get In Touch</button>
+            </div>
+        </div>
+    </div>
+</div>

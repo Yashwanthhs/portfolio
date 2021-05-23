@@ -2,9 +2,9 @@
     font-family: Helvetica;
 }
 
-// .content{
-    
-// }
+.content{
+    transform: translate(100px, 75%);
+}
 
 h2{
     color: #f59907;
@@ -14,7 +14,7 @@ h2{
 h2:hover{
     border-bottom: #f59907 2px solid;
     padding-bottom: 12px;
-    width: 94%;
+    width: 88%;
 }
 
 h3{
