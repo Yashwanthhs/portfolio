@@ -7,8 +7,9 @@ $name-color: #141e30;
 }
 
 .intro-container{
-    position: absolute;
+    // position: absolute;
     padding: 8px;
+    transform: translate(0px, 75%);
     bottom: 40%;
 }
 
