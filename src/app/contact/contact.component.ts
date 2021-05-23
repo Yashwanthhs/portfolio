@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 // import "../../assets/smtp.js";
 // declare let Email: any;
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -18,7 +19,7 @@ export class ContactComponent implements OnInit {
   });
 
 
-  constructor( private readonly http: HttpClient ) {}
+  constructor( private readonly http: HttpClient, private readonly route: Router) {}
 
   ngOnInit(): void {}
 
@@ -35,5 +36,11 @@ export class ContactComponent implements OnInit {
     this.http.post(`https://formspree.io/f/mqkwprwd`, body, { 'headers': headers }).subscribe((res: any)=>{
       console.log(res);
     });
+  }
+
+  onMouseWheel(evt: any) {
+    if(evt.deltaY < 0){
+      this.route.navigate(['experience']);
+    }
   }
 }
