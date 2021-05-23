@@ -10,7 +10,6 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AboutComponent } from './about/about.component';
 import { ExperienceComponent } from './experience/experience.component';
-import { EducationComponent } from './education/education.component';
 import { ContactComponent } from './contact/contact.component';
 
 
@@ -22,7 +21,6 @@ import { ContactComponent } from './contact/contact.component';
     NavBarComponent,
     AboutComponent,
     ExperienceComponent,
-    EducationComponent,
     ContactComponent
   ],
   imports: [
