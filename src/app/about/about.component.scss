@@ -1,14 +1,16 @@
+@import '../utilities/variables.scss';
+
 *{
     font-family: Helvetica;
 }
 
 h2{
-    color: #f59907;
+    color: $safron-color;
     font-size: 48px;
 }
 
 h2:hover{
-    border-bottom: #f59907 2px solid;
+    border-bottom: $safron-color 2px solid;
     padding-bottom: 8px;
     width: 80%;
 }
@@ -68,7 +70,7 @@ p{
 }
 
 .pic-frame{
-    border: solid #f59907 2px;
+    border: solid $safron-color 2px;
     width: calc(32vh);
     height: calc(36vh);
     position: absolute;
@@ -79,7 +81,7 @@ p{
 }
 
 .arrow{
-    color: #80e5ff;
+    color: $blue-color;
     font-size: 25px;
     font-weight: 600;
 }
@@ -92,3 +94,11 @@ p{
     padding-right:5em;
 }
 
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 721px) {
+}
+
+@media (max-width: 720px) {
+}

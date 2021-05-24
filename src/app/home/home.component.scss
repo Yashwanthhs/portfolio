@@ -1,50 +1,108 @@
-
-$intro-color: #007390;
-$name-color: #141e30;
+@import '../utilities/variables.scss';
 
 *{
-    font-family: Helvetica;
+    font-family: $default-font;
 }
 
-.intro-container{
-    // position: absolute;
-    padding: 8px;
-    transform: translate(0px, 75%);
-    bottom: 40%;
+@mixin introContainer($pad, $trans) {
+  padding: $pad;
+  transform: $trans;
 }
 
-
-.intro{
-    font-size: 35px;
-    color: #80e5ff;
+@mixin intro($fontSize, $color) {
+  font-size: $fontSize;
+  color: $color;
 }
 
-.name{
-    font-size: 100px;
-    line-height: 1.06;
-    letter-spacing: -0.02em;
-    color: $name-color;
-    margin: 0px;
+@mixin name($fontSize, $lineHeight, $spacing, $color, $margin) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $spacing;
+  color: $color;
+  margin: $margin;
 }
 
-.job{
-    color: #f59907;
-    font-size: 48px;
-    padding-left: 8px;
-    padding-bottom: 16px;
-    margin: 0px;
+@mixin job($color, $fontSize, $padLeft, $padBottom, $margin) {
+  color: $color,;
+  font-size: $fontSize;
+  padding-left: $padLeft;
+  padding-bottom: $padBottom;
+  margin: $margin;
 }
 
-.summary{
-    font-size: 20px;
-    letter-spacing: -0.02em;
-    line-height: 1.5;
-    font-family:  -apple-system,BlinkMacSystemFont,monospace;
+@mixin summary($fontSize, $letterSpacing, $lineHeight, $font) {
+  font-size: $fontSize;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight;
+  font-family: $font;
 }
 
-.summary-container{
-    width: 632px;
-    padding-left: 8px;
+@mixin summaryContainer($width, $padLeft) {
+  width: $width;
+  padding-left: $padLeft;
+}
+
+@media (max-width: 720px) {
+  .intro-container{
+    @include introContainer(8px, translate(0px, 50%));
+  }
+  .intro{
+    @include intro(16px, $blue-color)
+  }
+  .name{
+    @include name(48px, 1.06, -0.02em, $name-color, 0px)
+  }
+  .job{
+    @include job($safron-color, 24px, 8px, 4px, 0px)
+  }
+  .summary{
+    @include summary(12px, -0.02em, 1.5, $font-family)
+  }
+  .summary-container{
+    @include summaryContainer(280px, 8px)
+  }
+}
+
+@media only screen and (min-width: 721px) {
+  .intro-container{
+    @include introContainer(8px, translate(0px, 75%));
+  }
+  .intro{
+    @include intro(25px, $blue-color)
+  }
+  .name{
+    @include name(75px, 1.0, -0.01em, $name-color, 0px)
+  }
+  .job{
+    @include job($safron-color, 36px, 8px, 16px, 0px)
+  }
+  .summary{
+    @include summary(16px, -0.02em, 1.5, $font-family)
+  }
+  .summary-container{
+    @include summaryContainer(524px, 8px)
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .intro-container{
+    @include introContainer(8px, translate(0px, 75%));
+  }
+  .intro{
+    @include intro(35px, $blue-color)
+  }
+  .name{
+    @include name(100px, 1.06, -0.02em, $name-color, 0px)
+  }
+  .job{
+    @include job($safron-color, 48px, 8px, 16px, 0px)
+  }
+  .summary{
+    @include summary(20px, -0.02em, 1.5, $font-family)
+  }
+  .summary-container{
+    @include summaryContainer(632px, 8px)
+  }
 }
 
 .wave { 

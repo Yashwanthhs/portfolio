@@ -14,12 +14,12 @@ export class AboutComponent implements OnInit {
   }
 
   onMouseWheel(evt: any) {
-    if(evt.deltaY > 0){
-      this.route.navigate(['experience']);
-    }
-    else{
-      this.route.navigate(['']);
-    }
+    // if(evt.deltaY > 0){
+    //   this.route.navigate(['experience']);
+    // }
+    // else{
+    //   this.route.navigate(['']);
+    // }
   }
 
 }

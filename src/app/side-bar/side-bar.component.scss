@@ -1,3 +1,5 @@
+@import '../utilities/variables.scss';
+
 .mail-container{
     padding-left: 16px;
 }
@@ -14,7 +16,7 @@
 }
 
 .vertical-top {
-    border-left: 4px solid #80e5ff;
+    border-left: 4px solid $blue-color;
     height: 72px;
     position:absolute;
     bottom: 24%;
@@ -22,7 +24,7 @@
 }
 
 .vertical-bottom {
-    border-left: 4px solid #80e5ff;
+    border-left: 4px solid $blue-color;
     height: 8px;
     position:absolute;
     bottom: 0%;
