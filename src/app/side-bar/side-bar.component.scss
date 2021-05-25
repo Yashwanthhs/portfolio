@@ -7,26 +7,48 @@
 .mail{
     writing-mode: vertical-lr;
     position: absolute;
-    bottom: 0px;
-    font-size: 20px;
-    letter-spacing: -0.02em;
-    line-height: 1.5;
-    font-family:  -apple-system,BlinkMacSystemFont,monospace;
-    padding-bottom: 12px;
-}
-
-.vertical-top {
-    border-left: 4px solid $blue-color;
-    height: 72px;
-    position:absolute;
-    bottom: 24%;
-    left: 1.4%;
+    bottom: 0%;
+    font-family:  $font-family;
+    padding-bottom: 128px;
+    margin-bottom: 4px;
 }
 
 .vertical-bottom {
     border-left: 4px solid $blue-color;
-    height: 8px;
+    height: 128px;
     position:absolute;
     bottom: 0%;
-    left: 1.4%;
+    margin-left: 6px;
+}
+
+@mixin mail($font-Size, $letterSpace) {
+    font-size: $font-Size;
+    letter-spacing: $letterSpace;
+}
+
+@media (max-width: 720px){
+    .mail{
+        @include mail($small-details-font-size, $small-details-line-space)
+    }
+    .vertical-bottom{
+        border-left: 2px solid $blue-color;
+    }
+}
+
+@media only screen and (min-width: 721px){
+    .mail{
+        @include mail($medium-details-font-size, $medium-details-line-space)
+    }
+    .vertical-bottom{
+        border-left: 2px solid $blue-color;
+    }
+}
+
+@media only screen and (min-width: 1025px){
+    .mail{
+        @include mail($large-details-font-size, $large-details-line-space)
+    }
+    .vertical-bottom{
+        border-left: 4px solid $blue-color;
+    }
 }

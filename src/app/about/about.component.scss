@@ -4,27 +4,117 @@
     font-family: Helvetica;
 }
 
-h2{
+.header{
     color: $safron-color;
-    font-size: 48px;
 }
 
-h2:hover{
-    border-bottom: $safron-color 2px solid;
-    padding-bottom: 8px;
-    width: 80%;
+.details{
+    font-family:  $font-family;
 }
 
-p{
-    font-size: 18px;
-    letter-spacing: -0.02em;
-    line-height: 1.5;
-    font-family:  -apple-system,BlinkMacSystemFont,monospace;
+.arrow{
+    color: $blue-color;
 }
 
-.content{
-    transform: translate(0px, 75%);
+.skill-text{
+    font-family:  $font-family;
+    padding-right:5em;
 }
+
+@mixin header($fontSize) {
+    font-size: $fontSize;
+}
+
+@mixin headerOnHover($boder, $padBottom, $width) {
+    border-bottom: $boder;
+    padding-bottom: $padBottom;
+    width: $width;
+}
+
+@mixin details($fontSize, $letterSpace, $lineHeight) {
+    font-size: $fontSize;
+    letter-spacing: $letterSpace;
+    line-height: $lineHeight;
+}
+
+@mixin arrow($fontSize, $fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+@media (max-width: 720px) {
+    .header{
+        @include header($small-header-font-size);
+    }
+    .header:hover{
+        @include headerOnHover($safron-color 1px solid, 0px, fit-content);
+    }
+    .details{
+        @include details($small-details-font-size, $small-details-line-space, $small-details-line-height)
+    }
+    .content{
+        transform: translate(0px, 0%);
+        margin: 4px;
+    }
+    .arrow{
+        @include arrow(14px, 400);
+    }
+    .skill-text{
+        @include details($small-details-font-size, $small-details-line-space, $small-details-line-height)
+    }
+    .pic-container{
+        margin-top: 8px;
+        margin-left: 16px;
+    }
+}
+
+@media only screen and (min-width: 721px) {
+    .header{
+        @include header($medium-header-font-size);
+    }
+    .header:hover{
+        @include headerOnHover($safron-color 2px solid, 4px, fit-content);
+    }
+    .details{
+        @include details($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
+    }
+    .content{
+        transform: translate(0px, 0%);
+    }
+    .arrow{
+        @include arrow(18px, 500);
+    }
+    .skill-text{
+        @include details($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
+    }
+    .pic-container{
+        margin-top: 8px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .header{
+        @include header($large-header-font-size);
+    }
+    .header:hover{
+        @include headerOnHover($safron-color 2px solid, 8px, fit-content);
+    }
+    .details{
+        @include details($large-details-font-size, $large-details-line-space, $large-details-line-height)
+    }
+    .content{
+        transform: translate(0px, 25%);
+    }
+    .arrow{
+        @include arrow(25px, 600);
+    }
+    .skill-text{
+        @include details($large-details-font-size, $large-details-line-space, $large-details-line-height)
+    }
+}
+
+$pic-height: calc(24vh);
+$pic-width: calc(28vh);
 
 .row{
     margin: 0px;
@@ -32,8 +122,8 @@ p{
 
 .pic{
     position: absolute;
-    width: calc(32vh);
-    height: calc(36vh);
+    width: $pic-height;
+    height: $pic-width;
     opacity: 50%;
     top: 0;
 }
@@ -44,8 +134,8 @@ p{
 
 .pic-cover{
     background: #d9f7ff;
-    width: calc(32vh);
-    height: calc(36vh);
+    width: $pic-height;
+    height: $pic-width;
 }
 
 .pic-container:hover{
@@ -57,9 +147,9 @@ p{
     .pic-frame{
         top: 24px;
         left: 36px;
-        background: #d9f7ff;
         transition-delay: 0.25s;
         -webkit-transition-delay: 0.25s;
+        border: solid #6cdfff 2px;
     }
     .pic{
         background: white;
@@ -71,8 +161,8 @@ p{
 
 .pic-frame{
     border: solid $safron-color 2px;
-    width: calc(32vh);
-    height: calc(36vh);
+    width: $pic-height;
+    height: $pic-width;
     position: absolute;
     top: 36px;
     left: 48px;
@@ -80,25 +170,3 @@ p{
     z-index: -1;
 }
 
-.arrow{
-    color: $blue-color;
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.skill-text{
-    font-size: 18px;
-    letter-spacing: -0.02em;
-    line-height: 1.5;
-    font-family:  -apple-system,BlinkMacSystemFont,monospace;
-    padding-right:5em;
-}
-
-@media only screen and (min-width: 1024px) {
-}
-
-@media only screen and (min-width: 721px) {
-}
-
-@media (max-width: 720px) {
-}
