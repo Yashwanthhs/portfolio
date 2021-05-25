@@ -8,27 +8,13 @@
     margin: 0px;
 }
 
-.contact-content{
-    transform: translate(0px, 35%);
-}
-
 h2{
     color: $safron-color;
-    font-size: 48px;
-}
-
-h2:hover{
-    border-bottom: $safron-color 2px solid;
-    padding-bottom: 8px;
-    width: fit-content;
 }
 
 .content{
     text-align: center;
-    font-size: 18px;
-    letter-spacing: -0.02em;
-    line-height: 1.5;
-    font-family:  -apple-system,BlinkMacSystemFont,monospace;
+    font-family:  $font-family;
 }
 
 .mat-stroked-button{
@@ -37,21 +23,86 @@ h2:hover{
     background: white;
 }
 
-.btn{
-    font-weight: 600;
-    height: 48px;
-}
-
-.fields{
-    padding-left: 32px;
-    text-align: left;
-}
-
-mat-form-field{
-    width: 520px;
-}
-
 .action{
     display: flex;
     justify-content: center;
+}
+
+@mixin content($fontSize, $letterSpace, $lineHeight) {
+    font-size: $fontSize;
+    letter-spacing: $letterSpace;
+    line-height: $lineHeight;
+}
+
+@media (max-width: 720px) {
+    h2{
+        font-size: $small-header-font-size;
+        text-align: center;
+    }
+    h2:hover{
+        border-bottom: $safron-color 1px solid;
+        padding-bottom: 0px;
+    }
+    .contact-content{
+        transform: none;
+        padding-top: 8px;
+        padding-left: 16px;
+    }
+    .content{
+        @include content($small-details-font-size, $small-details-line-space, $small-details-line-height)
+    }
+    mat-form-field{
+        width: 228px;
+    }
+    .btn{
+        font-weight: 400;
+        height: 32px;
+    }
+}
+
+@media only screen and (min-width: 721px){
+    h2{
+        font-size: $medium-header-font-size;
+        text-align: center;
+    }
+    .contact-content{
+        transform: none;
+        padding-top: 8px;
+        padding-left: 16px;
+    }
+    .content{
+        @include content($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
+    }
+    mat-form-field{
+        width: 480px;
+    }
+    .btn{
+        font-weight: 500;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1025px){
+    h2{
+        font-size: $large-header-font-size;
+        text-align: left;
+    }
+    h2:hover{
+        border-bottom: $safron-color 2px solid;
+        padding-bottom: 4px;
+        width: fit-content;
+    }
+    .contact-content{
+        transform: translate(0px, 35%);
+    }
+    .content{
+        @include content($large-details-font-size, $large-details-line-space, $large-details-line-height)
+    }
+    mat-form-field{
+        width: 520px;
+    }
+    .btn{
+        font-weight: 600;
+        height: 48px;
+    }
 }

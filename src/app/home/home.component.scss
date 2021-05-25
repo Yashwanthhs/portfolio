@@ -4,9 +4,10 @@
     font-family: $default-font;
 }
 
-@mixin introContainer($pad, $trans) {
+@mixin introContainer($pad, $trans, $textAlign) {
   padding: $pad;
   transform: $trans;
+  text-align: $textAlign;
 }
 
 @mixin intro($fontSize, $color) {
@@ -44,10 +45,11 @@
 
 @media (max-width: 720px) {
   .intro-container{
-    @include introContainer(8px, translate(0px, 50%));
+    @include introContainer(8px, translate(0px, 50%), center);
   }
   .intro{
-    @include intro(16px, $blue-color)
+    @include intro(16px, $blue-color);
+    margin: 0px;
   }
   .name{
     @include name(48px, 1.06, -0.02em, $name-color, 0px)
@@ -59,13 +61,13 @@
     @include summary(12px, -0.02em, 1.5, $font-family)
   }
   .summary-container{
-    @include summaryContainer(280px, 8px)
+    @include summaryContainer(100%, 8px)
   }
 }
 
 @media only screen and (min-width: 721px) {
   .intro-container{
-    @include introContainer(8px, translate(0px, 75%));
+    @include introContainer(8px, translate(0px, 75%), center);
   }
   .intro{
     @include intro(25px, $blue-color)
@@ -80,13 +82,13 @@
     @include summary(16px, -0.02em, 1.5, $font-family)
   }
   .summary-container{
-    @include summaryContainer(524px, 8px)
+    @include summaryContainer(100%, 8px)
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
   .intro-container{
-    @include introContainer(8px, translate(0px, 75%));
+    @include introContainer(8px, translate(0px, 75%), left);
   }
   .intro{
     @include intro(35px, $blue-color)

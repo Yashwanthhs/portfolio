@@ -43,3 +43,46 @@
 a{
     color: #2c2c2c !important;
 }
+
+@media (max-width: 720px){
+    .nav-content{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 721px){
+    .mobile-nav{
+        display: none;
+    }
+}
+
+.mobile-nav{
+    float: right;
+    padding-right: 16px;
+    padding-top: 16px;
+}
+
+.mobile-nav-btn{
+    color: #2c2c2c;
+    background-color: white;
+    border: 1px solid $safron-color;
+    border-radius: 20px;
+    display: flex;
+}
+
+.mobile-nav-container{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    height: calc(36vh);
+    width: calc(36vh);
+}
+
+.mobile-route-div{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.mobile-route:hover{
+    color:$blue-color;
+}

@@ -39,8 +39,8 @@ export class ContactComponent implements OnInit {
   }
 
   onMouseWheel(evt: any) {
-    if(evt.deltaY < 0){
-      this.route.navigate(['experience']);
-    }
+    // if(evt.deltaY < 0){
+    //   this.route.navigate(['experience']);
+    // }
   }
 }

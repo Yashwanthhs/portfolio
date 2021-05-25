@@ -21,8 +21,9 @@
     padding-right:5em;
 }
 
-@mixin header($fontSize) {
+@mixin header($fontSize, $textAlign) {
     font-size: $fontSize;
+    text-align: $textAlign;
 }
 
 @mixin headerOnHover($boder, $padBottom, $width) {
@@ -44,10 +45,10 @@
 
 @media (max-width: 720px) {
     .header{
-        @include header($small-header-font-size);
+        @include header($small-header-font-size, center);
     }
     .header:hover{
-        @include headerOnHover($safron-color 1px solid, 0px, fit-content);
+        @include headerOnHover($safron-color 1px solid, 0px, 100%);
     }
     .details{
         @include details($small-details-font-size, $small-details-line-space, $small-details-line-height)
@@ -70,10 +71,7 @@
 
 @media only screen and (min-width: 721px) {
     .header{
-        @include header($medium-header-font-size);
-    }
-    .header:hover{
-        @include headerOnHover($safron-color 2px solid, 4px, fit-content);
+        @include header($medium-header-font-size, center);
     }
     .details{
         @include details($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
@@ -94,7 +92,7 @@
 
 @media only screen and (min-width: 1025px) {
     .header{
-        @include header($large-header-font-size);
+        @include header($large-header-font-size, left);
     }
     .header:hover{
         @include headerOnHover($safron-color 2px solid, 8px, fit-content);
