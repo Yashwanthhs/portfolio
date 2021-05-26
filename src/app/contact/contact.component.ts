@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-// import "../../assets/smtp.js";
-// declare let Email: any;
+import { AngularFirestore } from '@angular/fire/firestore';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
+  // items: Observable<any[]>;
   contactForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -19,9 +20,13 @@ export class ContactComponent implements OnInit {
   });
 
 
-  constructor( private readonly http: HttpClient, private readonly route: Router) {}
+  constructor( private readonly http: HttpClient, private readonly route: Router, private firestore: AngularFirestore) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.firestore.collection('messages').valueChanges().subscribe(res =>{
+      console.log(res);
+    });
+  }
 
   sendMail(msgForm: any){
     const userName: string = msgForm?.value?.name;
