@@ -28,6 +28,10 @@ h2{
     justify-content: center;
 }
 
+.thanks-msg{
+    text-align: center;
+} 
+
 @mixin content($fontSize, $letterSpace, $lineHeight) {
     font-size: $fontSize;
     letter-spacing: $letterSpace;
@@ -58,6 +62,10 @@ h2{
         font-weight: 400;
         height: 32px;
     }
+    .thanks-msg{
+        @include content($small-details-font-size, $small-details-line-space, $small-details-line-height);
+        color: $safron-color
+    }
 }
 
 @media only screen and (min-width: 721px){
@@ -80,6 +88,10 @@ h2{
         font-weight: 500;
         height: 40px;
     }
+    .thanks-msg{
+        @include content($medium-details-font-size, $medium-details-line-space, $medium-details-line-height);
+        color: $safron-color;
+    }
 }
 
 @media only screen and (min-width: 1025px){
@@ -93,7 +105,7 @@ h2{
         width: fit-content;
     }
     .contact-content{
-        transform: translate(0px, 35%);
+        transform: translate(0px, 25%);
     }
     .content{
         @include content($large-details-font-size, $large-details-line-space, $large-details-line-height)
@@ -104,5 +116,9 @@ h2{
     .btn{
         font-weight: 600;
         height: 48px;
+    }
+    .thanks-msg{
+        @include content($large-details-font-size, $large-details-line-space, $large-details-line-height);
+        color: $safron-color;
     }
 }

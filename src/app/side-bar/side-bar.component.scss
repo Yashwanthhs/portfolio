@@ -28,10 +28,16 @@
 
 @media (max-width: 720px){
     .mail{
-        @include mail($small-details-font-size, $small-details-line-space)
+        @include mail($small-details-font-size, $small-details-line-space);
     }
     .vertical-bottom{
         border-left: 2px solid $blue-color;
+    }
+    .copy-btn{
+        padding-bottom: 204px;
+    }
+    .material-icons{
+        font-size: 20px;
     }
 }
 
@@ -42,13 +48,42 @@
     .vertical-bottom{
         border-left: 2px solid $blue-color;
     }
+    .copy-btn{
+        padding-bottom: 224px;
+    }
 }
 
 @media only screen and (min-width: 1025px){
     .mail{
-        @include mail($large-details-font-size, $large-details-line-space)
+        @include mail($large-details-font-size, $large-details-line-space);
+        cursor : pointer;
     }
     .vertical-bottom{
         border-left: 4px solid $blue-color;
+    }
+    .copy-btn{
+        padding-bottom: 244px;
+    }
+}
+
+.copy-btn{
+    color: $safron-color;
+    background-color: white;
+    position: absolute;
+    bottom: 0%;
+    left: 0.5%;
+    border: 0px;
+}
+
+.copy{
+    display: none;
+}
+
+.mail-container:hover{
+    .mail{
+        display: none;
+    }
+    .copy{
+        display: block;
     }
 }

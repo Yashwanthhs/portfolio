@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,16 +15,16 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {}
 
   openMenu(): void {
-    this.dialog.open(DialogOverviewExampleDialog, {});
+    this.dialog.open(MenuDialog, {});
   }
 
 }
 
 @Component({
-  selector: 'dialog-overview-example-dialog',
-  templateUrl: './dialog-overview-example-dialog.html',
+  selector: 'menu-dialog',
+  templateUrl: './menu-dialog.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class DialogOverviewExampleDialog {
-  constructor(public dialogRef: MatDialogRef<DialogOverviewExampleDialog>) {}
+export class MenuDialog {
+  constructor(public dialogRef: MatDialogRef<MenuDialog>) {}
 }

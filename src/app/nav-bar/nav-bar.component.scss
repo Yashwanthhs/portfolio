@@ -42,6 +42,7 @@
 
 a{
     color: #2c2c2c !important;
+    text-decoration: none;
 }
 
 @media (max-width: 720px){
@@ -75,7 +76,7 @@ a{
     font-size: 24px;
     font-weight: 400;
     height: calc(36vh);
-    width: calc(36vh);
+    width: calc(32vh);
 }
 
 .mobile-route-div{
@@ -85,4 +86,5 @@ a{
 
 .mobile-route:hover{
     color:$blue-color;
+    margin: 1px;
 }

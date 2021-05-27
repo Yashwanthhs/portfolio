@@ -2,7 +2,7 @@
     <div class="col-lg-2 col-md-12 col-xs-12 header">
         <h2>Contact</h2>
     </div>
-    <div class="col-lg-4 col-md-12 col-xs-12 content" (wheel)="onMouseWheel($event)">
+    <div class="col-lg-4 col-md-12 col-xs-12 content">
         <div>
             <p>
                 For any inquiries and collaborations please contact me. <br>
@@ -10,7 +10,7 @@
                 I'll try my best to get back to you!
             </p>
         </div>
-        <div class="fields" [formGroup]="contactForm">
+        <div class="fields" [formGroup]="contactForm" #formDirective="ngForm" >
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
                 <input matInput formControlName="name" required>
@@ -24,7 +24,7 @@
                 <textarea matInput formControlName="message"></textarea>
             </mat-form-field>
             <div class="action">
-                <button mat-stroked-button class="btn" (click)="sendMail(contactForm)" [disabled]="contactForm.invalid">Get In Touch</button>
+                <button mat-stroked-button class="btn" (click)="sendMail(contactForm, formDirective)" [disabled]="contactForm.invalid">Get In Touch</button>
             </div>
         </div>
     </div>

@@ -4,6 +4,11 @@
     font-family: $default-font;
 }
 
+.name:hover{
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: white;
+}
+
 @mixin introContainer($pad, $trans, $textAlign) {
   padding: $pad;
   transform: $trans;
@@ -21,6 +26,7 @@
   letter-spacing: $spacing;
   color: $color;
   margin: $margin;
+  display: contents;
 }
 
 @mixin job($color, $fontSize, $padLeft, $padBottom, $margin) {
@@ -48,7 +54,7 @@
     @include introContainer(8px, translate(0px, 50%), center);
   }
   .intro{
-    @include intro(16px, $blue-color);
+    @include intro(24px, $blue-color);
     margin: 0px;
   }
   .name{
@@ -70,7 +76,7 @@
     @include introContainer(8px, translate(0px, 75%), center);
   }
   .intro{
-    @include intro(25px, $blue-color)
+    @include intro(28px, $blue-color)
   }
   .name{
     @include name(75px, 1.0, -0.01em, $name-color, 0px)
@@ -94,7 +100,7 @@
     @include intro(35px, $blue-color)
   }
   .name{
-    @include name(100px, 1.06, -0.02em, $name-color, 0px)
+    @include name(100px, 1.06, -0.02em, $name-color, 0px);
   }
   .job{
     @include job($safron-color, 48px, 8px, 16px, 0px)

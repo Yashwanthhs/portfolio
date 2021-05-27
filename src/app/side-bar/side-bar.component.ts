@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
-
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+  copyMail(){
+    const copyText = "yashwanthhs07@gmail.com";
+    navigator.clipboard.writeText(copyText)
+  }
 }
