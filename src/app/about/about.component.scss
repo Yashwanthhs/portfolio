@@ -4,6 +4,16 @@
     font-family: Helvetica;
 }
 
+.title{
+    margin: -16px 16px 0;
+    background-color: white;
+    width: fit-content;
+}
+
+.skills{
+    padding: 0px;
+}
+
 .header{
     color: $safron-color;   
 }
@@ -33,10 +43,12 @@
     text-align: $textAlign;
 }
 
-@mixin headerOnHover($boder, $padBottom, $width) {
-    border-bottom: $boder;
-    padding-bottom: $padBottom;
+@mixin headerOnHover($width, $padding) {
     width: $width;
+    background-color: $safron-color;
+    color: white;
+    padding: $padding;
+    border-radius: 8px;
 }
 
 @mixin details($fontSize, $letterSpace, $lineHeight) {
@@ -52,7 +64,7 @@
 
 @media (max-width: 720px) {
     .title{
-        width: 100%;
+        height: 40px;
     }
     .header{
         @include header($small-header-font-size, center);
@@ -60,14 +72,16 @@
         margin: 0px;
     }
     .header:hover{
-        @include headerOnHover($safron-color 1px solid, 0px, 100%);
+        @include headerOnHover(100%, 4px);
     }
     .details{
         @include details($small-details-font-size, $small-details-line-space, $small-details-line-height)
     }
     .content{
         transform: translate(0px, 0%);
-        margin: 4px;
+        margin: 8px;
+        border: 1px solid $safron-color;
+        border-radius: 8px;
     }
     .arrow{
         @include arrow(14px, 400);
@@ -76,23 +90,32 @@
         @include details($small-details-font-size, $small-details-line-space, $small-details-line-height)
     }
     .pic-container{
-        margin-top: 8px;
-        margin-left: 16px;
+        margin-top: 4px;
+    }
+    .pic-frame{
+        border: solid $safron-color 1px;
+        border-radius: 4px;
     }
 }
 
 @media only screen and (min-width: 721px) {
     .title{
-        width: fit-content;
+        height: 48px;
     }
     .header{
         @include header($medium-header-font-size, center);
+    }
+    .header:hover{
+        @include headerOnHover(fit-content, 8px);
     }
     .details{
         @include details($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
     }
     .content{
-        transform: translate(0px, 0%);
+        transform: translate(0px, 16%);
+        border: 2px solid $safron-color;
+        margin: 8px;
+        border-radius: 8px;
     }
     .arrow{
         @include arrow(18px, 500);
@@ -103,29 +126,40 @@
     .pic-container{
         margin-top: 8px;
     }
+    .pic-frame{
+        border: solid $safron-color 2px;
+        border-radius: 8px;
+    }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1221px) {
     .title{
-        width: fit-content;
+        height: 64px;
     }
     .header{
         @include header($large-header-font-size, left);
     }
     .header:hover{
-        @include headerOnHover($safron-color 2px solid, 8px, fit-content);
+        @include headerOnHover(fit-content, 8px);
     }
     .details{
         @include details($large-details-font-size, $large-details-line-space, $large-details-line-height)
     }
     .content{
         transform: translate(0px, 25%);
+        border: 2px solid $safron-color;
+        width: calc(150vh);
+        border-radius: 16px;
     }
     .arrow{
         @include arrow(25px, 600);
     }
     .skill-text{
         @include details($large-details-font-size, $large-details-line-space, $large-details-line-height)
+    }
+    .pic-frame{
+        border: solid $safron-color 2px;
+        border-radius: 16px;
     }
 }
 
@@ -146,6 +180,7 @@ $pic-width: calc(28vh);
 
 .pic-container{
     position: relative;
+    height: calc(36vh);
 }
 
 .pic-cover{
@@ -176,7 +211,6 @@ $pic-width: calc(28vh);
 }
 
 .pic-frame{
-    border: solid $safron-color 2px;
     width: $pic-height;
     height: $pic-width;
     position: absolute;
@@ -185,4 +219,3 @@ $pic-width: calc(28vh);
     background: white;
     z-index: -1;
 }
-

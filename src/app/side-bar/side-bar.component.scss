@@ -49,7 +49,7 @@
         padding-left: 8px;
     }
     .mail{
-        @include mail($medium-details-font-size, $medium-details-line-space)
+        @include mail($small-details-font-size, $small-details-line-space)
     }
     .vertical-bottom{
         border-left: 2px solid $blue-color;
@@ -64,16 +64,16 @@
     }
 }
 
-@media only screen and (min-width: 1025px){
+@media only screen and (min-width: 1225px){
     .mail-container{
         padding-left: 16px;
     }
     .mail{
-        @include mail($large-details-font-size, $large-details-line-space);
+        @include mail($large-details-font-size, 0.1em);
         cursor : pointer;
     }
     .vertical-bottom{
-        border-left: 4px solid $blue-color;
+        border-left: 2px solid $blue-color;
     }
     .copy-btn{
         padding-bottom: 96px;

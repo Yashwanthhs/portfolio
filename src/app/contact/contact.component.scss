@@ -1,26 +1,31 @@
 @import '../utilities/variables.scss';
 
 *{
-    font-family: Helvetica;
+    font-family: $default-font;
 }
 
-.row{
-    margin: 0px;
-}
-
-h2{
+.header{
     color: $safron-color;
+}
+
+.title{
+    margin: -16px 16px 0;
+    background-color: white;
+    width: fit-content;
 }
 
 .content{
     text-align: center;
+    padding: 8px;
+}
+
+.note{
     font-family:  $font-family;
 }
 
 .mat-stroked-button{
     color: white !important;
     background-color: $blue-color !important;
-    background: white;
 }
 
 .action{
@@ -39,20 +44,26 @@ h2{
 }
 
 @media (max-width: 720px) {
-    h2{
+    .title{
+        height: 40px;
+    }
+    .header{
         font-size: $small-header-font-size;
         text-align: center;
         height: 36px;
         margin: 0px;
     }
-    h2:hover{
-        border-bottom: $safron-color 1px solid;
-        padding-bottom: 0px;
+    .header:hover{
+        background-color: $safron-color;
+        color: white;
+        padding: 4px;
+        border-radius: 8px;
     }
-    .contact-content{
-        transform: none;
-        padding-top: 8px;
-        padding-left: 16px;
+    .outer-container{
+        transform: translate(0px, 0%);
+        margin: 8px;
+        border: 1px solid $safron-color;
+        border-radius: 8px;
     }
     .content{
         @include content($small-details-font-size, $small-details-line-space, $small-details-line-height)
@@ -68,17 +79,31 @@ h2{
         @include content($small-details-font-size, $small-details-line-space, $small-details-line-height);
         color: $safron-color
     }
+    .footer{
+        font-size: 12px;
+        font-weight: 400;
+    }
 }
 
 @media only screen and (min-width: 721px){
-    h2{
+    .header{
         font-size: $medium-header-font-size;
         text-align: center;
     }
-    .contact-content{
-        transform: none;
-        padding-top: 8px;
-        padding-left: 16px;
+    .title{
+        height: 48px;
+    }
+    .header:hover{
+        background-color: $safron-color;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+    }
+    .outer-container{
+        transform: translate(0px, 16%);
+        border: 2px solid $safron-color;
+        margin: 8px;
+        border-radius: 8px;
     }
     .content{
         @include content($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
@@ -94,26 +119,40 @@ h2{
         @include content($medium-details-font-size, $medium-details-line-space, $medium-details-line-height);
         color: $safron-color;
     }
+    .footer{
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
 
-@media only screen and (min-width: 1025px){
-    h2{
+@media only screen and (min-width: 1225px){
+    .header{
         font-size: $large-header-font-size;
         text-align: left;
     }
-    h2:hover{
-        border-bottom: $safron-color 2px solid;
-        padding-bottom: 4px;
-        width: fit-content;
+    .title{
+        height: 64px;
     }
-    .contact-content{
-        transform: translate(0px, 25%);
+    .header:hover{
+        background-color: $safron-color;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+    }
+    .outer-container{
+        transform: translate(64px, 25%);
+        border: 2px solid $safron-color;
+        width: calc(80vh);
+        border-radius: 16px;
     }
     .content{
-        @include content($large-details-font-size, $large-details-line-space, $large-details-line-height)
+        @include content($large-details-font-size, $large-details-line-space, $large-details-line-height);
     }
     mat-form-field{
         width: 520px;
+    }
+    .action{
+        padding-bottom: 16px;
     }
     .btn{
         font-weight: 600;
@@ -123,4 +162,18 @@ h2{
         @include content($large-details-font-size, $large-details-line-space, $large-details-line-height);
         color: $safron-color;
     }
+    .footer{
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+.footer{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    text-align: center;
+    font-family: $font-family;
+    padding-bottom: 4px;
+    padding-right: 4px;
 }
