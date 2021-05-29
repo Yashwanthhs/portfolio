@@ -6,12 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
+  
+  copyStyle: string = 'copy-defult';
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   copyMail(){
     const copyText = "yashwanthhs07@gmail.com";
-    navigator.clipboard.writeText(copyText)
+    navigator.clipboard.writeText(copyText);
+    this.copyStyle = 'copy-onClick';
+    setTimeout(() => {
+      this.copyStyle = 'copy-defult';
+    }, 2000);
   }
 }

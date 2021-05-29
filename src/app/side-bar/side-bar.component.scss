@@ -1,23 +1,18 @@
 @import '../utilities/variables.scss';
 
-.mail-container{
-    padding-left: 16px;
-}
 
-.mail{
-    writing-mode: vertical-lr;
+.mail-container{
     position: absolute;
     bottom: 0%;
+}
+.mail{
+    writing-mode: vertical-lr;
     font-family:  $font-family;
-    padding-bottom: 128px;
-    margin-bottom: 4px;
 }
 
 .vertical-bottom {
     border-left: 4px solid $blue-color;
     height: 128px;
-    position:absolute;
-    bottom: 0%;
     margin-left: 6px;
 }
 
@@ -27,6 +22,9 @@
 }
 
 @media (max-width: 720px){
+    .mail-container{
+        padding-left: 4px;
+    }
     .mail{
         @include mail($small-details-font-size, $small-details-line-space);
     }
@@ -34,14 +32,22 @@
         border-left: 2px solid $blue-color;
     }
     .copy-btn{
-        padding-bottom: 204px;
+        padding-bottom: 48px;
+        padding-left: 0px;
     }
     .material-icons{
         font-size: 20px;
     }
+    .checkmark{
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @media only screen and (min-width: 721px){
+    .mail-container{
+        padding-left: 8px;
+    }
     .mail{
         @include mail($medium-details-font-size, $medium-details-line-space)
     }
@@ -49,11 +55,19 @@
         border-left: 2px solid $blue-color;
     }
     .copy-btn{
-        padding-bottom: 224px;
+        padding-bottom: 48px;
+        padding-left: 0px;
+    }
+    .checkmark{
+        width: 28px;
+        height: 28px;
     }
 }
 
 @media only screen and (min-width: 1025px){
+    .mail-container{
+        padding-left: 16px;
+    }
     .mail{
         @include mail($large-details-font-size, $large-details-line-space);
         cursor : pointer;
@@ -62,16 +76,18 @@
         border-left: 4px solid $blue-color;
     }
     .copy-btn{
-        padding-bottom: 244px;
+        padding-bottom: 96px;
+        padding-left: 0px;
+    }
+    .checkmark{
+        width: 24px;
+        height: 24px;
     }
 }
 
 .copy-btn{
     color: $safron-color;
     background-color: white;
-    position: absolute;
-    bottom: 0%;
-    left: 0.5%;
     border: 0px;
 }
 
@@ -79,11 +95,78 @@
     display: none;
 }
 
-.mail-container:hover{
+.content:hover{
     .mail{
         display: none;
     }
     .copy{
         display: block;
+    }
+}
+
+.copy-defult{
+    .copy-icon{
+        display: block;
+    }
+    .checkmark{
+        display: none;
+    }
+}
+
+.copy-onClick{
+    .copy-icon{
+        display: none;
+    }
+    .checkmark{
+        display: block;
+    }
+}
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: $safron-color;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px $safron-color;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+    box-shadow: inset 0px 0px 0px 30px $safron-color;
     }
 }

@@ -5,12 +5,15 @@
 .body{
     display: grid;
     grid-template-columns: 0.2fr 3fr;
+    height: 100%;
 }
 
 .sidebar{
     grid-column: 1;
+    box-sizing: border-box;
 }
 
 .content{
     grid-column: 2;
+    box-sizing: border-box;
 }

@@ -10,6 +10,7 @@
 
 .details{
     font-family:  $font-family;
+    text-align: justify;
 }
 
 .arrow{
@@ -19,6 +20,12 @@
 .skill-text{
     font-family:  $font-family;
     padding-right:5em;
+}
+
+.company{
+    font-family:  $font-family;
+    color: #009999 !important;
+    text-decoration: none;
 }
 
 @mixin header($fontSize, $textAlign) {
@@ -44,8 +51,13 @@
 }
 
 @media (max-width: 720px) {
+    .title{
+        width: 100%;
+    }
     .header{
         @include header($small-header-font-size, center);
+        height: 36px;
+        margin: 0px;
     }
     .header:hover{
         @include headerOnHover($safron-color 1px solid, 0px, 100%);
@@ -70,6 +82,9 @@
 }
 
 @media only screen and (min-width: 721px) {
+    .title{
+        width: fit-content;
+    }
     .header{
         @include header($medium-header-font-size, center);
     }
@@ -91,6 +106,9 @@
 }
 
 @media only screen and (min-width: 1025px) {
+    .title{
+        width: fit-content;
+    }
     .header{
         @include header($large-header-font-size, left);
     }

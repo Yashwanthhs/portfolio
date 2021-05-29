@@ -14,6 +14,20 @@ h2{
 
 h3{
     color: $blue-color;
+    font-family:  $font-family;
+}
+
+h4{
+    font-family:  $font-family;
+}
+
+.time-period{
+    font-family:  $font-family;
+}
+
+.company{
+    display: flex;
+    flex-flow: column;
 }
 
 .arrow{
@@ -22,6 +36,10 @@ h3{
 
 span{
     font-family:  $font-family;
+}
+
+.details{
+    text-align: justify;
 }
 
 @mixin span($fontSize, $letterSpace, $lineHeight) {
@@ -37,20 +55,34 @@ span{
         padding-top: 8px;
         padding-left: 16px;
     }
+    .details{
+        padding-left: 0px;
+    }
     h2{
         font-size: $small-header-font-size;
         text-align: center;
+        height: 36px;
+        margin: 0px;
     }
     h2:hover{
         border-bottom: $safron-color 1px solid;
     }
     h3{
+        font-size: 28px;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+    h4{
         font-size: 24px;
         margin-bottom: 4px;
     }
-    h4{
-        font-size: 20px;
+    .company{
+        align-items: center;
+    }
+    .time-period{
+        font-size: 16px;
         margin-bottom: 4px;
+        font-weight: 600;
     }
     .arrow{
         font-size: $small-details-font-size;
@@ -76,6 +108,12 @@ span{
     }
     h4{
         font-size: 24px;
+    }
+    .time-period{
+        font-size: 16px;
+        padding: 4px;
+        padding-left: 16px;
+        font-weight: 600;
     }
     .arrow{
         font-size: $medium-details-font-size;
@@ -103,7 +141,12 @@ span{
         font-size: 32px;
     }
     h4{
-        font-size: 24px;
+        font-size: 28px;
+    }
+    .time-period{
+        font-size: 20px;
+        padding: 4px;
+        font-weight: 600;
     }
     .arrow{
         font-size: $large-details-font-size;
