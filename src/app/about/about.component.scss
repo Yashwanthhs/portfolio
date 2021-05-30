@@ -4,6 +4,10 @@
     font-family: Helvetica;
 }
 
+.about-container{
+    height: calc(90vh);
+}
+
 .title{
     margin: -16px 16px 0;
     background-color: white;
@@ -78,7 +82,6 @@
         @include details($small-details-font-size, $small-details-line-space, $small-details-line-height)
     }
     .content{
-        transform: translate(0px, 0%);
         margin: 8px;
         border: 1px solid $safron-color;
         border-radius: 8px;
@@ -91,14 +94,24 @@
     }
     .pic-container{
         margin-top: 4px;
+        border-radius: 16px;
     }
     .pic-frame{
         border: solid $safron-color 1px;
         border-radius: 4px;
     }
+    .pic, .pic-cover{
+        border-radius: 4px;
+    }
 }
 
 @media only screen and (min-width: 721px) {
+    .about-container{
+        height: calc(84vh);
+    }
+    .about-container{
+        padding-top: 48px;
+    }
     .title{
         height: 48px;
     }
@@ -108,11 +121,13 @@
     .header:hover{
         @include headerOnHover(fit-content, 8px);
     }
+    .row{
+        padding: 16px;
+    }
     .details{
         @include details($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
     }
     .content{
-        transform: translate(0px, 16%);
         border: 2px solid $safron-color;
         margin: 8px;
         border-radius: 8px;
@@ -125,16 +140,24 @@
     }
     .pic-container{
         margin-top: 8px;
+        border-radius: 8px;
     }
     .pic-frame{
         border: solid $safron-color 2px;
         border-radius: 8px;
     }
+    .pic, .pic-cover{
+        border-radius: 8px;
+    }
 }
 
-@media only screen and (min-width: 1221px) {
+@media only screen and (min-width: 1320px) {
+    .about-container{
+        padding-top: 120px;
+    }
     .title{
         height: 64px;
+        float: right;
     }
     .header{
         @include header($large-header-font-size, left);
@@ -143,12 +166,12 @@
         @include headerOnHover(fit-content, 8px);
     }
     .details{
-        @include details($large-details-font-size, $large-details-line-space, $large-details-line-height)
+        @include details($large-details-font-size, $large-details-line-space, $large-details-line-height);
+        padding-top: 32px;
     }
     .content{
-        transform: translate(0px, 25%);
         border: 2px solid $safron-color;
-        width: calc(150vh);
+        width: calc(120vh);
         border-radius: 16px;
     }
     .arrow{
@@ -159,6 +182,12 @@
     }
     .pic-frame{
         border: solid $safron-color 2px;
+        border-radius: 16px;
+    }
+    .pic-container{
+        border-radius: 16px;
+    }
+    .pic, .pic-cover{
         border-radius: 16px;
     }
 }

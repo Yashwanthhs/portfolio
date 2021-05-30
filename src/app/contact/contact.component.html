@@ -1,33 +1,33 @@
-<div class="outer-container">
-    <div class="title">
-        <h2 class="header">Contact</h2>
-    </div>
+<div class="contact-container">
     <div class="content">
-        <div>
-            <p class="note">
-                For any inquiries and collaborations please contact me. <br>
-                I am looking forward to hearing from you, <br> 
-                I'll try my best to get back to you!
-            </p>
+        <div class="title">
+            <h2 class="header">Contact</h2>
         </div>
-        <div class="fields" [formGroup]="contactForm" #formDirective="ngForm" >
-            <mat-form-field appearance="outline">
-                <mat-label>Name</mat-label>
-                <input matInput formControlName="name" required>
-            </mat-form-field> <br>
-            <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput formControlName="email" required>
-            </mat-form-field> <br>
-            <mat-form-field appearance="outline">
-                <mat-label>Message</mat-label>
-                <textarea matInput formControlName="message"></textarea>
-            </mat-form-field>
-            <div class="action">
-                <button mat-stroked-button class="btn" (click)="sendMail(contactForm, formDirective)" [disabled]="contactForm.invalid">Get In Touch</button>
+        <div class="details">
+            <div>
+                <p class="note">
+                    For any inquiries and collaborations please contact me. <br>
+                    I am looking forward to hearing from you.
+                </p>
+            </div>
+            <div class="fields" [formGroup]="contactForm" #formDirective="ngForm" >
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" required>
+                </mat-form-field> <br>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="email" required>
+                </mat-form-field> <br>
+                <mat-form-field appearance="outline">
+                    <mat-label>Message</mat-label>
+                    <textarea matInput formControlName="message"></textarea>
+                </mat-form-field>
+                <div class="action">
+                    <button mat-stroked-button class="btn" (click)="sendMail(contactForm, formDirective)" [disabled]="contactForm.invalid">Get In Touch</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="footer"> Made with<span style="color: red;"> ❤ </span>by Yashwanth</div>

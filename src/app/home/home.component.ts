@@ -14,12 +14,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onMouseWheel(evt: any) {
-    if(evt.deltaY > 0){
-      this.route.navigate(['about']);
-    }
-  }
 }
 
 

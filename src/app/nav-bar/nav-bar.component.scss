@@ -6,8 +6,8 @@
     font-size: 16px;
     letter-spacing: -0.02em;
     line-height: 1.5;
-    font-family:  -apple-system,BlinkMacSystemFont,monospace;
     padding: 4px;
+    font-family:  $font-family;
     border-bottom: aliceblue 0.5px groove;
 }
 
@@ -62,6 +62,7 @@ a{
     float: right;
     padding-right: 16px;
     padding-top: 16px;
+    position: fixed;
 }
 
 .mobile-nav-btn{
@@ -91,3 +92,23 @@ a{
     color:$blue-color;
     margin: 1px;
 }
+
+// nav{
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     font-size: 16px;
+//     letter-spacing: -0.02em;
+//     line-height: 1.5;
+//     font-family:  $font-family;
+//     border-bottom: aliceblue 0.5px groove;
+// }
+
+// ul{
+//     list-style: none;
+//     display: flex;
+// }
+
+// ul > li{
+//     margin-left: 2em;
+// }

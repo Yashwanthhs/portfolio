@@ -14,7 +14,7 @@
     width: fit-content;
 }
 
-.content{
+.details{
     text-align: center;
     padding: 8px;
 }
@@ -37,13 +37,17 @@
     text-align: center;
 } 
 
-@mixin content($fontSize, $letterSpace, $lineHeight) {
+@mixin details($fontSize, $letterSpace, $lineHeight) {
     font-size: $fontSize;
     letter-spacing: $letterSpace;
     line-height: $lineHeight;
 }
 
 @media (max-width: 720px) {
+    .contact-container{
+        padding-top: 80px;
+        height: calc(88vh);
+    }
     .title{
         height: 40px;
     }
@@ -59,14 +63,13 @@
         padding: 4px;
         border-radius: 8px;
     }
-    .outer-container{
-        transform: translate(0px, 0%);
+    .content{
         margin: 8px;
         border: 1px solid $safron-color;
         border-radius: 8px;
     }
-    .content{
-        @include content($small-details-font-size, $small-details-line-space, $small-details-line-height)
+    .details{
+        @include details($small-details-font-size, $small-details-line-space, $small-details-line-height)
     }
     mat-form-field{
         width: 228px;
@@ -76,7 +79,7 @@
         height: 32px;
     }
     .thanks-msg{
-        @include content($small-details-font-size, $small-details-line-space, $small-details-line-height);
+        @include details($small-details-font-size, $small-details-line-space, $small-details-line-height);
         color: $safron-color
     }
     .footer{
@@ -86,6 +89,9 @@
 }
 
 @media only screen and (min-width: 721px){
+    .contact-container{
+        height: calc(80vh);
+    }
     .header{
         font-size: $medium-header-font-size;
         text-align: center;
@@ -99,14 +105,14 @@
         padding: 8px;
         border-radius: 8px;
     }
-    .outer-container{
-        transform: translate(0px, 16%);
+    .content{
         border: 2px solid $safron-color;
         margin: 8px;
         border-radius: 8px;
+        width: calc(100vh);
     }
-    .content{
-        @include content($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
+    .details{
+        @include details($medium-details-font-size, $medium-details-line-space, $medium-details-line-height)
     }
     mat-form-field{
         width: 480px;
@@ -116,7 +122,7 @@
         height: 40px;
     }
     .thanks-msg{
-        @include content($medium-details-font-size, $medium-details-line-space, $medium-details-line-height);
+        @include details($medium-details-font-size, $medium-details-line-space, $medium-details-line-height);
         color: $safron-color;
     }
     .footer{
@@ -125,13 +131,19 @@
     }
 }
 
-@media only screen and (min-width: 1225px){
+@media only screen and (min-width: 1320px){
+    .contact-container{
+        height: calc(88vh);
+    }
+    .contact-container{
+        padding-top: 80px;
+    }
     .header{
         font-size: $large-header-font-size;
         text-align: left;
     }
     .title{
-        height: 64px;
+        float: right;
     }
     .header:hover{
         background-color: $safron-color;
@@ -139,14 +151,14 @@
         padding: 8px;
         border-radius: 8px;
     }
-    .outer-container{
-        transform: translate(64px, 25%);
+    .content{
         border: 2px solid $safron-color;
-        width: calc(80vh);
+        width: calc(120vh);
         border-radius: 16px;
     }
-    .content{
-        @include content($large-details-font-size, $large-details-line-space, $large-details-line-height);
+    .details{
+        @include details($large-details-font-size, $large-details-line-space, $large-details-line-height);
+        margin: 24px;
     }
     mat-form-field{
         width: 520px;
@@ -159,7 +171,7 @@
         height: 48px;
     }
     .thanks-msg{
-        @include content($large-details-font-size, $large-details-line-space, $large-details-line-height);
+        @include details($large-details-font-size, $large-details-line-space, $large-details-line-height);
         color: $safron-color;
     }
     .footer{
@@ -169,11 +181,6 @@
 }
 
 .footer{
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
     text-align: center;
     font-family: $font-family;
-    padding-bottom: 4px;
-    padding-right: 4px;
 }

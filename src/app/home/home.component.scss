@@ -9,10 +9,10 @@
   color: white;
 }
 
-@mixin introContainer($pad, $trans, $textAlign) {
+@mixin introContainer($pad, $textAlign) {
   padding: $pad;
-  transform: $trans;
   text-align: $textAlign;
+  height: calc(90vh);
 }
 
 @mixin intro($fontSize, $color) {
@@ -51,7 +51,10 @@
 
 @media (max-width: 720px) {
   .intro-container{
-    @include introContainer(8px, translate(0px, 50%), center);
+    @include introContainer(8px, center);
+  }
+  .content{
+    padding-top: 80px
   }
   .intro{
     @include intro(24px, $blue-color);
@@ -73,7 +76,10 @@
 
 @media only screen and (min-width: 721px) {
   .intro-container{
-    @include introContainer(8px, translate(0px, 75%), center);
+    @include introContainer(8px, center);
+  }
+  .content{
+    padding-top: 120px
   }
   .intro{
     @include intro(28px, $blue-color)
@@ -92,9 +98,12 @@
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1320px) {
   .intro-container{
-    @include introContainer(8px, translate(0px, 75%), left);
+    @include introContainer(8px, left);
+  }
+  .content{
+    padding-top: 200px
   }
   .intro{
     @include intro(35px, $blue-color)

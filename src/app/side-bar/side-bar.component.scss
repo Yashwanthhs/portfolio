@@ -1,9 +1,13 @@
 @import '../utilities/variables.scss';
 
-
 .mail-container{
+    height: calc(90vh);
+    position: fixed;
+}
+
+.content{
     position: absolute;
-    bottom: 0%;
+    bottom: -2%;
 }
 .mail{
     writing-mode: vertical-lr;
@@ -22,7 +26,7 @@
 }
 
 @media (max-width: 720px){
-    .mail-container{
+    .content{
         padding-left: 4px;
     }
     .mail{
@@ -45,7 +49,7 @@
 }
 
 @media only screen and (min-width: 721px){
-    .mail-container{
+    .content{
         padding-left: 8px;
     }
     .mail{
@@ -64,8 +68,8 @@
     }
 }
 
-@media only screen and (min-width: 1225px){
-    .mail-container{
+@media only screen and (min-width: 1320px){
+    .content{
         padding-left: 16px;
     }
     .mail{
@@ -95,7 +99,7 @@
     display: none;
 }
 
-.content:hover{
+.mail-container:hover{
     .mail{
         display: none;
     }

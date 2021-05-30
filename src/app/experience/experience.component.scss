@@ -4,6 +4,10 @@
     font-family: $default-font;
 }
 
+.exp-container{
+    height: calc(90vh);
+}
+
 .row{
     margin: 0px;
 }
@@ -66,6 +70,9 @@ li::before {
 
 
 @media (max-width: 720px){
+    .exp-container{
+        padding-top: 80px;
+    }
     .content{
         margin: 8px;
         border: 1px solid $safron-color;
@@ -78,7 +85,7 @@ li::before {
         display: none;
     }
     .details{
-        padding: 8px;
+        padding: 16px;
     }
     h2{
         font-size: $small-header-font-size;
@@ -119,8 +126,11 @@ li::before {
 }
 
 @media only screen and (min-width: 721px){
+    .exp-container{
+        padding-top: 64px;
+        height: calc(84vh);
+    }
     .content{
-        transform: translate(0px, 16%);
         margin: 8px;
         border: 2px solid $safron-color;
         border-radius: 8px;
@@ -129,7 +139,7 @@ li::before {
         display: block;
     }
     .details{
-        padding: 8px;
+        padding: 24px;
     }
     .title{
         height: 40px;
@@ -166,16 +176,18 @@ li::before {
     }
 }
 
-@media only screen and (min-width: 1225px){
+@media only screen and (min-width: 1320px){
+    .exp-container{
+        padding-top: 120px;
+    }
     .content{
-        transform: translate(0px, 75%);
         margin: 8px;
         border: 2px solid $safron-color;
         border-radius: 8px;
-        width: calc(150vh);
+        width: calc(120vh);
     }
     .title{
-        height: 48px;
+        height: 56px;
     }
     .at{
         display: block;

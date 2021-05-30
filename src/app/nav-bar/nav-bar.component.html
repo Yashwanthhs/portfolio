@@ -1,28 +1,34 @@
-<div class="nav-content">
-    <a href="">
-        <span class="home">
-            Yashwanth
-        </span>
-    </a>
-    <a href="/about">
-        <span class="route">
-            About
-        </span>
-    </a>
-    <a href="/experience">
-        <span class="route">
-            Experience
-        </span>
-    </a>
-    <a href="/contact">
-        <span class="route">
-            Contact
-        </span>
-    </a>
-    <span class="resume-btn">
-        <a href="assets/Yashwanth_HS_Resume.pdf" mat-stroked-button>Resume</a>
-    </span>
+<div>
+    <div>
+        <div class="nav-content">
+            <a href="" routerLinkActive="activebutton">
+                <span class="home">
+                    Yashwanth
+                </span>
+            </a>
+            <a href="/about" routerLinkActive="activebutton">
+                <span class="route">
+                    About
+                </span>
+            </a>
+            <a href="/experience" routerLinkActive="activebutton">
+                <span class="route">
+                    Experience
+                </span>
+            </a>
+            <a href="/contact" routerLinkActive="activebutton">
+                <span class="route">
+                    Contact
+                </span>
+            </a>
+            <span class="resume-btn" routerLinkActive="activebutton">
+                <a href="assets/Yashwanth_HS_Resume.pdf" target="_blank" mat-stroked-button>Resume</a>
+            </span>
+        </div>
+        <div class="mobile-nav">
+            <button class="mobile-nav-btn" (click)="openMenu()"><mat-icon aria-hidden="false" aria-label="Example home icon">reorder</mat-icon></button>
+        </div>
+    </div>
 </div>
-<div class="mobile-nav">
-    <button class="mobile-nav-btn" (click)="openMenu()"><mat-icon aria-hidden="false" aria-label="Example home icon">reorder</mat-icon></button>
-</div>
+
+
